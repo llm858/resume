@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//在外部定义一个变量sname和一个函数run
+  var sname="Li lei";
+  var run=function(){
+    console.log(`${this.sname} 起跑...`)
+  }
+//在对象{}中
+  var lilei={
+  //用到外部变量，且变量名刚好和属性名相同
+    sname, //sname:sname,
+    sage:11,
+  //所有对象{}中的:function，都可省略。但不等同于箭头函数，不影响this
+    intr(){//intr:function(){
+      console.log(`I'm ${this.sname}, I'm ${this.sage}`)
+    },
+  //从对象外部引入一个函数run，保存在属性run中
+    run //run:run
+  //结果:
+  //run:function(){
+  //  console.log(`${this.sname} 起跑...`)
+  //}
+  }
+  lilei.intr();
+  lilei.run();
+</script>
+</body>
+</html>

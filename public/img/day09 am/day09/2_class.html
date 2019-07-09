@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//定义了一种类型: 学生
+//规定: 
+//  所有学生自己都有学生姓名和学生年龄
+//  所有学生都会做自我介绍
+class Student{
+//function Student(sname,sage){
+  constructor(sname,sage){
+    this.sname=sname;
+    this.sage=sage;
+  }
+//Student.prototype.intr=function(){
+  intr(){
+    console.log(`I'm ${this.sname}, I'm ${this.sage}`)
+  }
+}
+
+var lilei=new Student("Li Lei",11);
+var hmm=new Student("Han Meimei",12)
+console.log(lilei);
+console.log(hmm);
+lilei.intr();
+hmm.intr();
+</script>
+</body>
+</html>

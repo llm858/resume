@@ -1,0 +1,41 @@
+.my_border{
+    border-bottom:1px dashed #b9bbbe;
+}
+.my_f3{
+    font:23px 华文楷体 ;
+}
+@media screen and (min-width:992px){
+    .width{
+        width:100%;
+        height:500px;
+    }
+    .width1{
+        width:100%;
+        height:332px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:991px){
+    .width{
+        width:100%;
+        height:600px;
+    }
+    .width1{
+        width:100%;
+        height:280px;
+    }
+}
+@media screen and (max-width:767px){
+    .width{
+        width:100%;
+        height:600px;
+    }
+    .width1{
+        width:100%;
+        height:332px;
+    }
+}
+
+
+
+
+

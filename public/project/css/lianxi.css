@@ -1,0 +1,26 @@
+.myinput,.myinput2{
+    height:60px;
+    width:90%;
+}
+.myinput1{
+    height:120px;
+    width:90%;
+}
+.mybtn{
+    width:150px;
+    height:50px;
+    background-color:#b16939;
+    color:#fff;
+    border-radius: 5px;
+}
+.col-sm-4{
+    animation:bounceInDown 2s;
+}
+.col-md-5{
+    animation:bounceInUp 2s;
+}
+#Result{
+    font-size:18px;
+    color:red;
+    text-align: left;
+}

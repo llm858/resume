@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <link rel="stylesheet" href="../css/bootstrap.css"/>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/comm.css">
+  <link rel="stylesheet" href="css/animation.css">
+</head>
+<body>
+  <header></header>
+<div class="container">
+    <div id="demo" class="carousel" data-ride="carousel">
+      <ul  id="d1" class="carousel-inner list-unstyled">
+        <li class="carousel-item active"><img class="w-100" :src="p1.img" /></li>
+        <li class="carousel-item"><img class="w-100" :src="p2.img" alt=""></li>
+        <li class="carousel-item"><img class="w-100" :src="p3.img" alt=""></li>
+      </ul>
+      <a data-slide="prev" class="carousel-control-prev my_wide" href="#demo">
+        <span class="carousel-control-prev-icon" ></span></a>
+      <a data-slide="next" class="carousel-control-next my_wide" href="#demo">
+        <span class="carousel-control-next-icon"></span></a>
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+    </div>
+    <div class="text-center mt-5">
+      <h4>我们的旅游路线</h4>
+      <p class="my_font">风景的意义，不是逃避，不是躲藏，不是获取，不是记录，而是在想象的之外的环境里，</p>
+      <p class="my_font">去改变自己的世界观，从此慢慢改变心中真正觉得重要的东西。</p>
+    </div>
+    <div id="d3">
+    <div class="row m-0">
+      <div class="col-md-4 col-sm-12 pl-1" onclick="location.href='road-details.html'">
+        <div class="overflow">
+          <img class="w-100 my_a" :src="p1.img" alt=""></div>
+      </div>
+      <div class="col-md-8 col-sm-12 pl-1" onclick="location.href='road-details.html'">
+        <div class="overflow">
+          <img class="w-100 my_a" :src="p2.img" alt=""></div>
+      </div>
+    </div>
+    <div class="row m-0">
+      <div  class="col-md-4 col-sm-12 mt-3 pl-1" onclick="location.href='road-details.html'">
+        <div class="overflow">
+          <img class="w-100 my_a" :src="p3.img" alt=""></div>
+      </div>
+      <div class="col-md-4 col-sm-12 mt-3 pl-1" onclick="location.href='road-details.html'">
+        <div class="overflow">
+          <img class="w-100 my_a" :src="p4.img" alt=""></div>
+      </div>
+      <div class="col-md-4 col-sm-12 mt-3 pl-1" onclick="location.href='road-details.html'">
+        <div class="overflow">
+          <img class="w-100 my_a" :src="p5.img" alt=""></div>
+      </div>
+    </div>
+    </div>
+    <div class="mt-5 text-center">
+      <h4>我们的热门旅游项目</h4>
+      <p class="my_font">旅行，自由。没有繁琐的计划，没有沉重的负担，只有较纯粹的态度。</p>
+    </div>
+    <div id="f2">
+    <div  class="row m-0 ">
+      <div v-for="(item,i) of result" :key="i" class="col-md-4 p-0 col-sm-12 text-center mt-3 pr-3">
+            <div onclick="location.href='road-details.html'"  class="border bg-transparent my_w1">
+              <div>
+            <img class="my_w" :src="item.img" alt=""></div>
+            <h4 class="text-danger">￥{{item.price.toFixed(2)}}</h4>
+            <p class="my_font" v-text="item.details"></p>
+            </div>
+          </div>
+      </div>
+     </div>
+    <div class="text-center">
+      <a  href="roads.html" class="btn btn-outline-secondary border-primary mt-5 text-primary my_btn_w block">MORE</a>
+    </div>
+    <div class="bg-info text-center mt-5">
+      <table></table>
+      <h4 class="text-white mt-5">给您一次全身心的释放，回归自然</h4>
+      <p class="text-white">—————— 贵在远离城市喧嚣，寻找内心的世外桃源 ——————</p>
+      <p class="text-white">世界这么大，和我们去看看吧！带上您的行李，我们一起走世界，“走四方路迢迢水长长 迷迷茫茫一村又一庄 看
+      </p>
+      <p class="text-white">斜阳 落下去又回来地不老天不荒 岁月长又长走四方 路迢迢水长长迷迷茫茫一村又一庄看斜阳 ..”
+      </p>
+      <a href="roads.html"  class="btn btn-outline-secondary border-white mt-3 text-white mb-5 my_btn_w">MORE
+      </a>
+    </div>
+    <div class="text-center mt-5 mb-5">
+      <h4>我们的新闻动态</h4>
+      <p class="my_font">
+        旅行，自由。没有繁琐的计划，没有沉重的负担，只有较纯粹的态度。</p>
+    </div>
+    <div class="row">
+      <div id="demo1" class="col-md-6 col-sm-12 p-0 carousel text-center" data-ride="carousel">
+        <ul id="d2" class="carousel-inner">
+          <li class="carousel-item active"><img class="w-100"  :src="p1.img" /></li>
+          <li class="carousel-item"><img class="w-100"  :src="p2.img" /></li>
+          <li class="carousel-item"><img class="w-100"  :src="p3.img" a/></li>
+          <li class="carousel-item"><img class="w-100"  :src="p4.img" a/></li>
+        </ul>
+        <a class="carousel-control-prev" data-slide="prev" href="#demo1">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" data-slide="next" href="#demo1">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+        <ul class="carousel-indicators mb-3 my-t">
+          <li data-target="#demo1" data-slide-to="0"></li>
+          <li data-target="#demo1" data-slide-to="1"></li>
+          <li data-target="#demo1" data-slide-to="2"></li>
+          <li data-target="#demo1" data-slide-to="3"></li>
+        </ul>
+      </div>
+      <div id="d4" class="col-md-6 col-sm-12">
+          <div class="media float-left  border-bottom">
+              <div class=" border-0 bg-light text-center my_footer_w">
+                <h5>12</h5>
+                <p>2017-12</p>
+              </div>
+            <div class="media-body"><p class="ml-5 my_font mb-3" onclick="location.href='lianxi.html'" v-text="p1.details"></p>
+            </div>
+          </div>
+        <div class="media float-left  border-bottom mt-5">
+        <div class=" border-0 bg-light text-center my_footer_w">
+          <h5>12</h5>
+          <p>2017-12</p>
+        </div>
+        <div class="media-body">
+            <p class="ml-5 my_font mb-3" onclick="location.href='lianxi.html'" v-text="p2.details">
+            </p>
+        </div>
+        </div>
+        <div class="media float-left  border-bottom mt-5">
+          <div class=" border-0 bg-light text-center my_footer_w">
+            <h5>12</h5>
+            <p>2017-12</p>
+          </div>
+          <div class="media-body">
+            <p class="ml-5 my_font mb-3" onclick="location.href='lianxi.html'" v-text="p3.details"></p>
+          </div>
+        </div>
+    </div>
+  </div>
+   
+     <div class="my_style1 my_position">
+      <span class="my-block">热线电话：400-123456</span>
+      <img src="../img/tel.PNG" alt=""></div>
+      <div  class="my_style1 my_position1">
+      <span class="my-block">
+        <img src="../img/qq1.png" alt="">QQ客服</span>
+      <img  src="../img/qq.PNG" alt=""></div>
+      <div  class="my_style1 my_position2">
+      <span class="my-block">工作时间：周一至周五9:00-18：00</span>
+      <img class="my_mt" src="../img/naozhong.PNG" alt=""></div>
+   
+  </div>
+<footer></footer>
+<script src="js/bootstrap.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/index.js"></script>
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+
+</body>
+</html>

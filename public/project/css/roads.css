@@ -1,0 +1,63 @@
+/*路线导航的样式设置*/
+.border1{
+    width:15%;
+    height:50%;
+    border:1px solid #b9bbbe;
+    line-height:40px;
+    padding:0;
+    border-radius:5px;
+}
+.border1:hover{
+    border-color:#00aeef;
+}
+
+/*路线图片的样式设置*/
+@media screen and (min-width:992px){
+    div.my_style{width:100%;height:280px;}
+    p.my_color{
+     width:80%;height:auto;
+    }
+}
+@media screen and (max-width:991px) and (min-width:768px){
+    div.my_style{width:100%;height:200px;}
+    p.my_color{
+     width:80%;height:auto;
+    }
+}
+@media screen and (max-width:767px){
+    div.my_style{width:100%;height:500px;}
+    p.my_color{
+     width:80%;height:auto;
+    }
+}
+div.my_style{
+overflow: hidden;
+}
+p.my_color{
+    font-size:14px;
+    background:#fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin:0;
+}
+div.my_style:hover p.my_color{
+    background-color: #00aeef;
+    color:white;
+}
+div.my_style>div{
+width:80%;height:70%;
+margin:0 0 10px;
+overflow:hidden;
+}
+img.my_height{ 
+    width:100%;height:100%;
+    transition: all 0.3s ease-out 0s;
+}
+div.my_style:hover img.my_height{
+    transform: scale(1.1);   
+}
+
+
+
+
