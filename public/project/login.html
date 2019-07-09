@@ -11,6 +11,17 @@
   <link rel="stylesheet" href="css/comm.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/animation.css">
+  <style>
+      table{
+          position:relative;
+      }
+   .nameMsg{
+       position: absolute;
+       top:305px;left:545px;
+       width:140px;height:30px;
+       line-height: 30px;
+   }
+  </style>
 </head>
 <body>
 <header></header>
@@ -27,7 +38,7 @@
         </tr>
         <tr>
             <td colspan=2>
-                <input  name="upwd" type="password" style="height:40px; width:95%;margin-left:13px;" placeholder="请输入密码" min=6>
+                <input  name="upwd" type="password" style="margin-top:8px;height:40px; width:95%;margin-left:13px;" placeholder="请输入密码" min=6>
             </td>
         </tr>
         <tr>
@@ -42,9 +53,12 @@
         </tr>
     </table>
 </div>
+<!--错误提示-->
+<div class="nameMsg" style='color:red;margin-left:13px;'>用户名不能为空</div>
 <footer></footer>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery-1.11.3.js"></script>
+<script src="js/vue.js"></script>
 <script src="js/login.js"></script>
 <script src="js/header.js"></script>
 <script src="js/footer.js"></script>
