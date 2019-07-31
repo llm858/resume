@@ -12,20 +12,50 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/animation.css">
   <style>
-      table{
-          position:relative;
+      .mycont{
+          background:url('../img/login.jpg') no-repeat;
+          background-size:100% 100%;
+          height:700px;
       }
-   .nameMsg{
-       position: absolute;
-       top:305px;left:545px;
-       width:140px;height:30px;
-       line-height: 30px;
+     table{
+         /*margin-top:50px;*/
+          float:right;
+          margin:150px 50px!important;
+      }
+   .nameMsg,.nameMsg1{
+       font-size:14px;
+       /*margin-left:30px;*/
+   }
+   input{
+    display: inline-block;
+    line-height: 38px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    outline: none;
+    color: #262e39;
+    border-radius:5px;
+   }
+   button{
+       display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    height: 40px;
    }
   </style>
 </head>
 <body>
 <header></header>
-<div class="container" style="background-color:lavender">
+<div class="mycont">
     <table id="login">
         <tr class="login-item">
             <td style="text-align:left;"><h3 style="margin-left:8px;color:#fff">登录旅游网</h3></td>
@@ -33,28 +63,26 @@
         </tr>
         <tr>
             <td colspan=2>
-                <input autofocus name="uname" type="text" style="height:40px; width:95%;margin-left:13px;" placeholder="请输入用户名">
+                <input autofocus name="uname" type="text" style="height:40px; width:65%;margin-left:50px;" placeholder="请输入用户名">
             </td>
         </tr>
         <tr>
             <td colspan=2>
-                <input  name="upwd" type="password" style="margin-top:8px;height:40px; width:95%;margin-left:13px;" placeholder="请输入密码" min=6>
+                <input  name="upwd" type="password" style="margin-top:8px;height:40px; width:65%;margin-left:50px;" placeholder="请输入密码" min=6>
             </td>
         </tr>
         <tr>
-            <td colspan=2 class="text-white"><input type="radio" style="margin-left:8px">自动登录
-            <span style="float:right;margin-right:8px;color:#fff">忘记密码?</span>
+            <td colspan=2 class="text-white"><input type="radio" style="margin-left:50px">自动登录
+            <span style="float:right;margin-right:130px;color:#fff">忘记密码?</span>
             </td>
         </tr>
         <tr>
-            <td colspan=2><button id="btn" style="margin-bottom:10px;text-align:center;width:100%;height:80%;background-color:#0aa1ed;color:white;">登录
+            <td colspan=2><button id="btn" type="text" class="bg-primary" style="margin-bottom:20px;margin-left:50px;width:65%;height:50px;color:white;">登录
             </button>
             </td>
         </tr>
     </table>
 </div>
-<!--错误提示-->
-<div class="nameMsg" style='color:red;margin-left:13px;'>用户名不能为空</div>
 <footer></footer>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery-1.11.3.js"></script>

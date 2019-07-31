@@ -12,8 +12,9 @@
   <link rel="stylesheet" href="css/animation.css">
   <style>
   table{
-      width:500px;height:400px;
-      margin:30px 28%;
+      width:600px;height:500px;
+      float:right;
+      margin:120px 50px;
       background-color:rgba(0,0,0,0.2);
       color:white;
       padding:10px;
@@ -25,48 +26,82 @@
       padding-left:14px;
   }
   td.myfont3{
+      padding:10px 0;
       padding-left:45px;
   }
-  input.myfont4{
+  /*input.myfont4{
       margin-left:115px;
+  }*/
+  span.nameMsg,span.nameMsg1,span.nameMsg2,span.nameMsg3,span.nameMsg0{
+      font-size:14px;
   }
+  .mycont{
+      height:700px;
+    background:url('../img/register.jpg')no-repeat;
+    background-size: 100% 100%;
+  }
+  input{
+    display: inline-block;
+    line-height: 38px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    outline: none;
+    color: #262e39;
+    border-radius:5px;
+   }
+  button{
+       display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    height: 40px;
+   }
   </style>
 </head>
 <body>
 <header></header>
-<div class="container" style="background-color:lavender">
+<div class="mycont">
     <table>
-        <tr>
-            <td class="pl-4">新用户注册</td>
+        <tr class="border-bottom">
+            <td class="pl-4"><h5>新用户注册</h5></td>
             <td class="text-right pr-4"><a href="login.html" class="text-white">直接登录</a></td>
         </tr>
-        <tr>
+        <tr style="height:70px;">
             <td colspan=2 class="myfont1" >
-                用户名：<input autofocus class="ml-4" name="uname" type="text" placeholder="请输入用户名" style="height:40px; width:52%;">
+                用户名：<input autofocus class="ml-4" name="uname" type="text" placeholder="请输入用户名" style="height:40px; width:300px;">
                 </td>
         </tr>
-        <tr>
+        <tr style="height:70px;">
             <td colspan=2 class="myfont2">
-                登录密码：<input class="ml-4 t1" type="password" name="upwd" placeholder="请输入密码" style="height:40px; width:50%;">
+                登录密码：<input class="ml-4 t1" type="password" name="upwd" placeholder="请输入密码" style="height:40px; width:300px;">
                 </td>
         </tr>
-        <tr>
+        <tr style="height:70px;">
             <td colspan=2 class="myfont2">
-                确认密码：<input class="ml-4 t2" type="password" name="upwd" placeholder="请确认密码" style="height:40px; width:50%;">
+                确认密码：<input class="ml-4 t2" type="password" name="userupwd" placeholder="请确认密码" style="height:40px; width:300px;">
                 </td>
         </tr>
-        <tr>
+        <tr style="height:70px;">
             <td colspan="2" class="myfont3">
-                邮箱：<input class="ml-4" type="email" name="email" placeholder="请输入邮箱地址" style="height:40px; width:53.5%;">
+                邮箱：<input class="ml-4" type="email" name="email" placeholder="请输入邮箱地址" style="height:40px; width:300px;">
                 </td>
         </tr>
-        <tr>
+        <tr style="height:70px;">
             <td colspan=2 class="myfont1">
-                手机号：<input class="ml-4" type="text"  name="tel" placeholder="请输入您的手机号" style="height:40px; width:52%;">
+                手机号：<input class="ml-4" type="text"  name="tel" placeholder="请输入您的手机号" style="height:40px; width:300px;">
                 </td>
         </tr>
         <tr>
-            <td colspan=2><input type="submit" class="myfont4" value="提交注册信息" style="margin-bottom:10px;text-align:center;width:50%;height:80%;background-color:#0aa1ed;color:white;"></td>
+            <td colspan=2><button type="text" class="myfont4 bg-primary text-white" style="margin-bottom:10px;margin-left:120px;width:300px;height:40px;">提交</button></td>
         </tr>
     </table>
 </div>

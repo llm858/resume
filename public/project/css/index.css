@@ -24,6 +24,10 @@ ul.carousel-indicators{
 .my_a:hover{
     transform: scale(1.1);
 }
+img.my_w{
+    height:230px;
+    width:100%;
+}
 @media screen and (min-width:992px){
     .my_w1{width:100%;
     height:379px;
@@ -31,7 +35,7 @@ ul.carousel-indicators{
     }
     .my_w{
         width: 100%;
-        height: 260px;
+        height: 230px;
         
     }
     .w1{
@@ -47,7 +51,7 @@ ul.carousel-indicators{
     }
     .my_w{
         width: 100%;
-        height: 160px;
+        height: 230px;
         
     }
     .w1{
@@ -62,9 +66,10 @@ ul.carousel-indicators{
             padding:15px;
         }
         .my_w{
-            width: 100%;
-            height: 260px;
-        }
+        width: 100%;
+        height: 270px;
+        
+    }
         .w1{
             width:100%;
             height:33.3%;
@@ -104,7 +109,7 @@ div.my_w1>div{
 	margin-top:3%;
 }
 img.my_w{
-height:180px;width:100%;
+/*height:230px;width:100%;*/
 transition:all 1s ease-out 0s;
 }
 div.my_w1:hover img.my_w{  
