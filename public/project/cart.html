@@ -10,8 +10,9 @@
   <script src="../js/popper.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/comm.css">
-  <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/cart.css">
+  <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
   <style>
     [v-cloak] {
            display: none;
@@ -20,9 +21,9 @@
 </head>
 <body>
     <header></header>
-  <div id="mycart"  class="cart container">
+  <div id="mycart" class="cart container">
     <div  v-if="hasList">
-        <h3 class="mt-5">我的购物车</h3>
+        <h3 >我的购物车</h3>
         <!--全选--> 
         <ul class="d-flex mt-5 mb-5 title bg-light">
         <li><input class="mt-2" v-model="isSelected" @change="selectAll" type="checkbox"  />全选</li>
@@ -33,7 +34,7 @@
             <li>操作</li>
         </ul>
      <!--商品列表-->
-     <div  class="leftImgText d-flex border p-4" v-for="(item,index) of list" :key="index">
+     <div style="width:1120px" class="leftImgText d-flex border p-4" v-for="(item,index) of list" :key="index">
        <input  class="ml-4" type="checkbox" @change="select" v-model="item.cb">
       <img class="myimg"  :src="item.img_url">
       <!--商品详情-->
@@ -53,7 +54,7 @@
       <div class="float-right mt-5">
         <span v-cloak>已选商品{{sum}}件</span>
         <span v-cloak class="ml-2 mr-2">合计：￥{{totalPrice}}</span>
-        <button type="text" @click="account" class="mybtn bg-danger text-white">去结算
+        <button type="text" @click="account" class="mybtn bg-danger text-white">结算
           <img class="d-none" src="../img/count.jpg" alt="">
           </button></div>
      </div>
@@ -66,8 +67,6 @@
     <footer></footer>
     <script src="js/vue.js"></script>
   <script src="js/ajax.js"></script>
-    <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
     <script>
     new Vue({
     el:"#mycart",
@@ -176,7 +175,6 @@
                   data:{id:a}
                 }).then(result=>{
                   if(result.code==1){
-                  confirm("删除成功");
                     //重新加载数据相当刷新
                     this.loadMore();}
                   }).catch(err=>{return;})
@@ -205,11 +203,18 @@
             this.getTotalPrice();
           },
           account(){
+            var index=0;
             for(var item of this.list){
               if(item.cb==true){
-            location.href="index.html";
+                ++index;
           }
-        }confirm("支付成功");
+            }
+          if(index>0){
+            this.delItem1();
+            location.href="index.html";
+            alert("支付成功");
+          }
+        
           }
             }      
    })

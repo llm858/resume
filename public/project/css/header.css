@@ -4,6 +4,31 @@
 .my_style:hover{
     color:#00aeef;
 }
+header{
+    display: relative;
+}
+.myimg{
+    width:250px;height:80px;
+    display: absolute;
+    left:200px;
+}
+.my_small{
+    display: absolute;
+    width:250px;height:50px;
+    white-space: nowrap;
+}
+.welcome{
+    display:absolute;
+    width:100px;height:50px;
+    white-space: nowrap;
+}
+.mydiv{
+    width:550px;height:90px;
+   display: absolute;
+   left:250px;  
+   white-space: nowrap;
+   overflow: hidden;
+}
 #login{
         margin:30px 300px;
        background-color: rgba(0,0,0,0.2);

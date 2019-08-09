@@ -1,31 +1,23 @@
-<header id="header" class="w-100" onload="load_data(e)">
+<header id="header">
     <div class="my_color d-flex justify-content-around">
       <p class="my_small mt-4">欢迎来到safety旅游官方网站</p>
       <p class="my_small mt-3"><img src="../img/tel1.PNG" alt="">24小时服务热线：400 *** 8888</p>
       <p class="my_small mt-4"><img class="mr-2" src="../img/youxiang1.PNG" alt="">邮箱：xxxxxxxxx@qq.com</p>
-      <div class="welcome mt-4" id="cue">
+      <div class="welcome mt-4">
       <a  href="register.html" class="text-white text-right mr-4">注册</a>
       <a  href="login.html" class="text-white text-right">登录</a>
       </div>
       </div>
-      <!--<span class="mt-4">
-      <a id="uname" class="text-white" href="javascript:;"></a>
-      <a id="delclass" href="index.html" class="text-white ml-3 d-none" οnclick="exitu()">退出</a></div>
-    </span>-->
-  <div class="row m-0">
-  <div class="col-sm-12 col-md-2">
-       <img class="mr-5" src="../img/title.png" alt="">
-        </div>
-    <div class="col-sm-12 col-md-10">
-      <ul class="nav d-flex justify-content-end">
-        <li class="nav-link mt-4 col-md-2"><a class="text-dark" href="index.html">首页</a></li>
-        <li class="nav-link mt-4 col-md-2"><a class="text-dark" href="details_1.html">关于我们</a></li>
-        <li class="nav-link mt-4 col-md-2"><a class="text-dark" href="roads.html">精选路线</a></li>
-        <li class="nav-link mt-4 col-md-2"><a class="text-dark" href="news.html">新闻中心</a></li>
-        <li class="nav-link mt-4 col-md-2"><a class="text-dark" href="lianxi.html">联系我们</a></li>
-        <li class="nav-link mt-4 col-md-2"><a class="text-dark" href="cart.html">购物车</a></li>
+  <div class="d-flex  justify-content-center">
+       <img class="mr-5 myimg" src="../img/title.png" alt="">
+      <ul class="nav mydiv ">
+        <li class="nav-link mt-4"><a class="text-dark" href="index.html">首页</a></li>
+        <li class="nav-link mt-4"><a class="text-dark" href="details_1.html">关于我们</a></li>
+        <li class="nav-link mt-4"><a class="text-dark" href="roads.html">精选路线</a></li>
+        <li class="nav-link mt-4"><a class="text-dark" href="news.html">新闻中心</a></li>
+        <li class="nav-link mt-4"><a class="text-dark" href="lianxi.html">联系我们</a></li>
+        <li class="nav-link mt-4"><a style="text-decoration: none" href="javascript:;" class="mytn text-dark">购物车</a></li>
       </ul>
-    </div>
   </div>
 </header>
 <script src="js/vue.js"></script>
@@ -41,5 +33,13 @@
         }
         $("#youbtn").click(function(){
           sessionStorage.clear();
+        })
+        $(".mytn").click(function(){
+          if(uname){
+            location.href="cart.html"
+          }else{
+            alert("您还未登录，请先登录");
+            location.href="login.html";
+          }
         })
 </script>
