@@ -1,9 +1,10 @@
 $(function(){
 			$("#btn").click(function(){
                 var uname=$("input[name=uname]").val();
-                var upwd=$("input[name=upwd]").val(); 
+                var upwd=$("input[name=upwd]").val();
+                 sessionStorage.setItem("uname",uname);
                 if(!uname){
-                    console.log("用户名不能为空");return;
+                    console.log("用户名不能为空");return;  
                 }
                 if(!upwd){
                     console.log("密码不能为空");return;
@@ -18,14 +19,21 @@ $(function(){
             },
             success:function(data){
                 if(data.code==1){
-                    confirm('登录成功')
-                    window.location.href="index.html";
-                }else{
+                    confirm('登录成功');
+                    $("input[name=uname]").val('');
+                    $("input[name=upwd]").val('');
+                    var did=data.data[0].did;
+                    console.log(did);
+                    sessionStorage.setItem("did",did); 
+                    location.href="index.html";
+            }else{
                     confirm("用户名或者密码错误!");
-                }          
- }
-     })
-    })
+                    
+               }
+                
+     }
+})
+})
 })
 $(function(){
     var errMsg;
@@ -54,5 +62,6 @@ $(function(){
             }
         })	
         })	
-        })	
+    })
+   
 

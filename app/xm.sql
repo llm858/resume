@@ -20,7 +20,8 @@ CREATE TABLE xm_roads1_img(
 );
 /*index.html的小图片*/
 CREATE TABLE xm_roads_img(
-  fid INT PRIMARY KEY AUTO_INCREMENT,
+  did INT PRIMARY KEY AUTO_INCREMENT,
+  count INT,
   details VARCHAR(32),
   price  DECIMAL(10,2),
   img   VARCHAR(32)
@@ -53,15 +54,30 @@ CREATE TABLE xm_root(
   email VARCHAR(32),
   tel   CHAR(11)
 );
-
+/*用户购物车*/
+CREATE TABLE xm_cart(
+  i  INT PRIMARY KEY AUTO_INCREMENT,
+  id INT ,
+  img_url VARCHAR(50),
+  price   DECIMAL(10,2),
+  title   VARCHAR(255),
+  count   INT,
+  did     INT
+);
+/*用户登录信息*/
+CREATE TABLE xm_user(
+  did INT PRIMARY KEY AUTO_INCREMENT,
+  uname  VARCHAR(16),
+  upwd  VARCHAR(16)
+);
 /******数据导入******/
 INSERT INTO xm_roads_img VALUES
-(null,"东北旅游纯玩 7日6晚",2000,"../img/body_6.png"),
-(null,"东北旅游纯玩 7日6晚",1899,"../img/body_7.jpg"),
-(null,"东北旅游纯玩 7日6晚",1899,"../img/body_8.png"),
-(null,"东北旅游纯玩 7日6晚",1899,"../img/body_9.png"),
-(null,"东北旅游纯玩 7日6晚",1899,"../img/body_10.jpg"),
-(null,"东北旅游纯玩 7日6晚",1899,"../img/body_11.jpg");
+(null,1,"东北旅游纯玩 7日6晚",2000,"../img/body_6.png"),
+(null,1,"东北旅游纯玩 7日6晚",1899,"../img/body_7.jpg"),
+(null,1,"东北旅游纯玩 7日6晚",1899,"../img/body_8.png"),
+(null,1,"东北旅游纯玩 7日6晚",1899,"../img/body_9.png"),
+(null,1,"东北旅游纯玩 7日6晚",1899,"../img/body_10.jpg"),
+(null,1,"东北旅游纯玩 7日6晚",1899,"../img/body_11.jpg");
 
 INSERT INTO xm_roads_photo VALUES
 (null,"../img/road1.png","全国出发 日本旅游6/8天 东京富士山大阪京都白川乡日本跟团游东京富士山大阪京都白川"),
@@ -109,3 +125,11 @@ INSERT INTO xm_roads1_img VALUES
 INSERT INTO xm_root VALUES
 (null,"tom","123456","123456@qq.com","80082088201"),
 (null,"lily","1234567","1234567@qq.com","12345697125");
+
+INSERT INTO xm_user VALUES
+(null,"tom","123456"),
+(null,"lily","1234567");
+
+-- INSERT INTO xm_cart VALUES
+-- (null,"../img/body_6.png",2000.00,"东北旅游纯玩 7日6晚",5,1),
+-- (null,"../img/body_7.jpg",4000.00,"东北旅游纯玩 7日6晚",5,1);

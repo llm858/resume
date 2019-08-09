@@ -95,14 +95,15 @@ img.my_w{
     height:20%;
 }
 
-div.my_w1:hover{
+.my_w1:hover{
     box-shadow:#ddd 1px 1px 1px 1px;
 }
 
-div.my_w1{
+.my_w1{
 transition:all 1s ease-out 0s;
+display: block;
 }
-div.my_w1>div{
+.my_w1>div{
     width:95%;height:70%;
 	overflow:hidden;
     margin-left:2%;
@@ -112,7 +113,7 @@ img.my_w{
 /*height:230px;width:100%;*/
 transition:all 1s ease-out 0s;
 }
-div.my_w1:hover img.my_w{  
+.my_w1:hover img.my_w{  
     transform: scale(1.1);
     border-radius: 5px;
 }

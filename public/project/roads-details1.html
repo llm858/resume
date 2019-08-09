@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>路线详情</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <link rel="stylesheet" href="../css/bootstrap.css"/>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/comm.css">
+  <link rel="stylesheet" href="css/road_details.css">
+</head>
+<body>
+<header></header>
+<div  class="container">
+  <div id="mycart" class="row m-0 mb-5 mt-3">
+    <div class="col-md-7 col-sm-12 p-0">
+      <div id="smallimg" :style="{'background':'url('+p.img+')'}">
+       <div id="super-mask" @mouseover="over" @mouseout="out" @mousemove="move($event)"></div>
+       <div id="float"></div>
+       </div>
+        <div id="big"><img  id="divlg" :src="p.img"></div>
+        <div class="mt-5">
+        <a class="item1 float-left"></a>
+        <img class="my_w2 ml-2" :src="p.img" alt="">
+        <a class="item3"></a>
+        </div>
+    </div>
+    <div  class="col-md-5 col-sm-12 p-0">
+      <div class="ml-md-4 mt-3 mt-md-0 my_n0">
+      <h4 class="mt-5" v-text="p.details"></h4>
+      <p class="mt-4">库存：99</p>
+      <p>销量：1000</p>
+      <p>规格：<span class="border border-danger p-2 text-danger">默认</span></p>
+      <p>价格:<span class="text-danger my_font1">￥{{p.price}}</span>
+          <span class="inline-block text-muted ml-1" style="text-decoration: line-through">￥2000:00</span>
+      </p>
+        <p>数量：
+          <input @click="min" id="min" type="button" value="-">
+          <span id="text_box"  class="bg-white">{{p.count}}</span>
+          <input @click="add" id="add" type="button" value="+">
+        </p>
+          <button type="text" @click="cart">立刻订购</button>
+          <button @click="addCart"  id="cart" type="text" class="bg-primary my_btn1 text-white text-right">加入购物车</button>
+      </div>
+    </div>
+  </div>
+  <ul class="nav nav-pills bg-light mt-5">
+    <li class="nav-item"><a data-toggle="pill" class="nav-link active text-dark my_font2 px-5 py-3" href="#demo">宝贝详情</a></li>
+    <li class="nav-item"><a data-toggle="pill" class="nav-link text-dark my_font2 py-3 px-5" href="#tab">产品评论</a></li>
+  </ul>
+   <div class="tab-content">
+      <div id="demo" class="tab-pane active">
+        <div class="d-flex mt-4 mb-4">
+        <h6 class="text-dark">日期:20</h6>
+        <h6 class="text-dark my_w5">人数：1</h6>
+        </div>
+        <img class="w-100" src="../img/road_details-3jpg.jpg" alt="">
+      </div>
+    <div id="tab" class="tab-pane"></div>
+  </div>
+  <div class="my_style1 my_position">
+      <span class="my-block">热线电话：400-123456</span>
+      <img src="../img/tel.PNG" alt=""></div>
+      <div  class="my_style1 my_position1">
+      <span class="my-block">
+        <img src="../img/qq1.png" alt="">QQ客服</span>
+      <img  src="../img/qq.PNG" alt=""></div>
+      <div  class="my_style1 my_position2">
+      <span class="my-block">工作时间：周一至周五9:00-18：00</span>
+      <img class="my_mt" src="../img/naozhong.PNG" alt=""></div>
+</div>
+<footer></footer>
+<!--<script src="js/bootstrap.js"></script>-->
+<script src="js/vue.js"></script>
+<script src="js/axios.js"></script>
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+<script>
+new Vue({
+  el:"#mycart",
+  data:{
+    p:[],
+  },
+  mounted(){
+    var float = document.getElementById("mask"); //左侧遮罩层
+    var big=document.getElementById("big");
+    var bigImg = document.getElementById("divlg"); //右侧可视区域
+  },
+  created(){
+    axios.get(
+            "http://localhost:3000/index/roads-details",
+            {
+                params:{
+                    did:location.search.split("=")[1]
+                }
+            }
+        ).then(result=>{
+         // console.log(result);
+          this.p=result.data.data[0];
+        })
+  },
+  methods:{
+     min(){
+       this.p.count>1?this.p.count--:1;
+     },
+     add(){
+       this.p.count++;
+     },
+     //鼠标移入左侧区域使遮罩层以及右侧大图可见
+      over(){
+        float.style.visibility="visible";
+        big.style.display ="block";
+      }, 
+
+      //鼠标移出左侧区域使遮罩层以及右侧大图不可见
+      out(){
+        float.style.visibility="hidden";
+        big.style.display= "none";
+      }, 
+
+      //鼠标移动时遮罩层随鼠标的移动而移动
+      move(e){
+        var bigImg = document.getElementById("divlg"); //右侧可视区域
+        var MSIZE=200;//记录小mask的大小
+        var SMSIZE=400;
+        var l =e.offsetX-MSIZE/2;
+        var t =e.offsetY-MSIZE/2;
+        
+        if(l < 0){l = 0;}
+        else if(l> SMSIZE-MSIZE){
+             l = SMSIZE-MSIZE; 
+        }    
+        if(t < 0) {t = 0;}
+        else if(t > SMSIZE-MSIZE) {
+            t = SMSIZE-MSIZE;
+        }    
+
+        //求出来一个比例
+        var scale = 450/400;
+
+         //遮罩层运动位置
+        float.style.left = l + "px";
+        float.style.top = t + "px"; 
+
+         //右侧大图运动位置
+        bigImg.style.left=-scale*l+'px';
+        bigImg.style.top =-scale*t+'px';
+      },
+      cart(){
+        var did=sessionStorage.getItem("did");//用户id
+        //console.log(did);
+        var img_url=this.p.img;
+        var price=this.p.price;
+        var title=this.p.details;
+        var count=this.p.count;
+        var id=location.search.split("=")[1];//商品id
+        //console.log(count);
+        if(did==""||did==undefined||did==null){
+           alert("您还未登录，请先登录")
+          window.location.href="login.html";
+        }else{
+       axios.get(
+      "http://localhost:3000/index/add-cart",
+      {
+      params:{
+      did,
+      count,
+      img_url,
+      price,
+      title,
+      id}
+      }
+    ).then(result=>{
+      if(result.data.code==1){
+        //console.log(result);
+        window.location.href="cart.html"
+      }else{
+        confirm("提交失败");
+      }
+     })
+      }
+      },
+      addCart(){//添加商品至购物车
+        var did=sessionStorage.getItem("did");
+       // console.log(did)
+        var img_url=this.p.img;
+        var price=this.p.price;
+        var title=this.p.details;
+        var count=this.p.count;
+        var id=location.search.split("=")[1];//商品id
+         if(did==""||did==undefined||did==null){
+           alert("您还未登录，请先登录");
+           window.location.href="login.html";
+         }
+          axios.get(
+      "http://localhost:3000/index/add-cart",
+      {params:{
+      did,
+      count,
+      img_url,
+      price,
+      title,
+      id}
+      }
+    ).then(result=>{
+      if(result.data.code==1){
+        confirm("添加成功");
+      }else{
+        return false;
+      }
+     }) 
+      }
+  }
+})
+</script>
+</body>
+</html>

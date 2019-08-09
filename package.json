@@ -18,5 +18,8 @@
   "homepage": "https://github.com/llm858/resume#readme",
   "devDependencies": {
     "webpack": "^4.39.0"
+  },
+  "dependencies": {
+    "session": "^0.1.0"
   }
 }

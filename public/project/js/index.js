@@ -1,10 +1,11 @@
-(function(){
+$(function(){
    $.ajax({
         url:"http://localhost:3000/index",
         type:"get",
         dataType:"json"
     })
     .then(function(result){
+        console.log(result);
         new Vue({
           el:"#f2",
           data:{
@@ -76,5 +77,5 @@
             }
         })
      }
-    })
-})()
+    })  
+})

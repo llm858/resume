@@ -14,12 +14,14 @@ var server = app.listen(3000);
    resave:false,// 是否每次都重新保存会话，建议false
    saveUninitialized:false// 是否自动保存未初始化的会话，建议false
  }))
-app.use(cors({origin:"http://127.0.0.1:5500"}));
+app.use(cors({origin:"*"}));
 //使用body-parser中间件
 app.use(bodyParser.urlencoded({extended:false}));
 //托管静态资源到public目录下
-app.use(express.static('../../public/project'));
+app.use(express.static('../public/project'));
 /*使用路由器来管理路由*/
 app.use('/index',index);
+
+
 
 
